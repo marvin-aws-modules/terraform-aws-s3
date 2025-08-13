@@ -1,0 +1,31 @@
+{
+  "module": "basic-s3",
+  "variables": {
+    "bucket_name": "marvin-test-bucket",
+    "enable_versioning": true,
+    "default_tags": {
+      "Environment": "Test",
+      "Owner": "marvin.stewart"
+    },
+    "sse_algorithm": "AES256",
+    "enable_bucket_policy": true
+  },
+  "provider": {
+    "aws": {
+      "region": "us-east-1",
+      "version": "~> 5.0"
+    }
+  },
+  "expected_outputs": {
+    "s3_bucket_arn": "string",
+    "s3_bucket_name": "string",
+    "s3_bucket_domain": "string"
+  },
+  "meta": {
+    "required_version": ">= 1.12.2"
+  },
+  "state": {
+    "backend": "local",
+    "path": "./terraform.tfstate"
+  }
+}
