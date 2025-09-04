@@ -1,11 +1,10 @@
-sse_algorithm = "AES256"
-kms_key_id = "placeholder"  # placeholder auto-generated
-bucket_name = "marvin-test-bucket"
-default_tags =         {
+bucket_name = "marvin-test-bucket-2025-29-8"
+default_tags = {
   Environment = "Test"
-  Owner = "marvin.stewart"
+  Owner       = "marvin"
 }
-enable_versioning = true
-enable_public_access_block = null
-logging_target_bucket = "placeholder"  # placeholder auto-generated
-enable_bucket_policy = true
+enable_versioning          = false
+enable_public_access_block = false
+logging_target_bucket      = "placeholder" # placeholder auto-generated
+enable_bucket_policy       = false
+enable_logging             = false

@@ -5,7 +5,7 @@ enable_versioning = true
 default_tags = {
   Environment = "dev"
   Project     = "s3-storage"
-  Owner       = "marvin.stewart"
+  Owner       = "marvin"
 }
 
 sse_algorithm = "aws:kms" # Use "AES256" for basic encryption, "aws:kms" for KMS-backed encryption

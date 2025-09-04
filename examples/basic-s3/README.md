@@ -20,6 +20,8 @@ bucket_name = "<your-value>"
 default_tags = "<your-value>"
 enable_bucket_policy = "<your-value>"
 enable_versioning = "<your-value>"
+kms_key_id = "<your-value>"
+logging_target_bucket = "<your-value>"
 sse_algorithm = "<your-value>"
 ```
 

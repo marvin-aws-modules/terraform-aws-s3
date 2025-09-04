@@ -5,7 +5,7 @@
     "enable_versioning": true,
     "default_tags": {
       "Environment": "Test",
-      "Owner": "marvin.stewart"
+      "Owner": "marvin"
     },
     "sse_algorithm": "AES256",
     "enable_bucket_policy": true

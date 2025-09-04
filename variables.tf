@@ -10,8 +10,15 @@ variable "enable_versioning" {
 }
 
 variable "default_tags" {
-  description = "Key-value tags applied to the S3 bucket for resource tracking, cost allocation, and governance."
   type        = map(string)
+  default     = {}
+  description = "Baseline tags applied across all modules"
+}
+
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Optional tags to override or extend default_tags"
 }
 
 variable "sse_algorithm" {
@@ -29,15 +36,34 @@ variable "enable_bucket_policy" {
 variable "enable_public_access_block" {
   description = "Enables blocking of public access to the S3 bucket. Strongly recommended to prevent accidental exposure of sensitive data."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "kms_key_id" {
   description = "ARN of the customer-managed KMS key for S3 encryption"
   type        = string
+  default     = null
 }
 
 variable "logging_target_bucket" {
   description = "S3 bucket where access logs will be delivered"
   type        = string
+}
+
+variable "enable_encryption" {
+  description = "Toggle to enable encryption for the S3 bucket. Strongly recommended for sensitive data."
+  type        = bool
+  default     = false
+}
+
+variable "enable_logging" {
+  description = "Toggle to enable logging for the S3 bucket. Strongly recommended for audit and compliance purposes."
+  type        = bool
+  default     = false
+}
+
+variable "policy_document" {
+  type        = string
+  description = "Optional IAM policy JSON to attach to the bucket"
+  default     = null
 }
