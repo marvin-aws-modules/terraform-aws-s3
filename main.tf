@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "${var.bucket_name}-${random_id.suffix.hex}"
-  tags   = merge(var.default_tags, var.tags)
+  bucket        = "${var.bucket_name}-${random_id.suffix.hex}"
+  tags          = merge(var.default_tags, var.tags)
+  force_destroy = var.force_destroy
 }
 
 resource "random_id" "suffix" {

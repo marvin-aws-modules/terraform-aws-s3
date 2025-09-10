@@ -67,3 +67,9 @@ variable "policy_document" {
   description = "Optional IAM policy JSON to attach to the bucket"
   default     = null
 }
+
+variable "force_destroy" {
+  type        = bool
+  default     = false
+  description = "Delete all objects (and versions) when destroying the bucket"
+}

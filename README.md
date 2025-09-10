@@ -10,8 +10,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.5.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.7.2 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 6.5.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
@@ -41,6 +41,7 @@ No modules.
 | <a name="input_enable_logging"></a> [enable\_logging](#input\_enable\_logging) | Toggle to enable logging for the S3 bucket. Strongly recommended for audit and compliance purposes. | `bool` | `false` | no |
 | <a name="input_enable_public_access_block"></a> [enable\_public\_access\_block](#input\_enable\_public\_access\_block) | Enables blocking of public access to the S3 bucket. Strongly recommended to prevent accidental exposure of sensitive data. | `bool` | `false` | no |
 | <a name="input_enable_versioning"></a> [enable\_versioning](#input\_enable\_versioning) | Toggle to enable versioning for the S3 bucket. Helps preserve, retrieve, and restore every version of every object stored. | `bool` | `false` | no |
+| <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | Delete all objects (and versions) when destroying the bucket | `bool` | `false` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | ARN of the customer-managed KMS key for S3 encryption | `string` | `null` | no |
 | <a name="input_logging_target_bucket"></a> [logging\_target\_bucket](#input\_logging\_target\_bucket) | S3 bucket where access logs will be delivered | `string` | n/a | yes |
 | <a name="input_policy_document"></a> [policy\_document](#input\_policy\_document) | Optional IAM policy JSON to attach to the bucket | `string` | `null` | no |
