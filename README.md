@@ -43,7 +43,7 @@ No modules.
 | <a name="input_enable_versioning"></a> [enable\_versioning](#input\_enable\_versioning) | Toggle to enable versioning for the S3 bucket. Helps preserve, retrieve, and restore every version of every object stored. | `bool` | `false` | no |
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | Delete all objects (and versions) when destroying the bucket | `bool` | `false` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | ARN of the customer-managed KMS key for S3 encryption | `string` | `null` | no |
-| <a name="input_logging_target_bucket"></a> [logging\_target\_bucket](#input\_logging\_target\_bucket) | S3 bucket where access logs will be delivered | `string` | n/a | yes |
+| <a name="input_logging_target_bucket"></a> [logging\_target\_bucket](#input\_logging\_target\_bucket) | S3 bucket where access logs will be delivered | `string` | `""` | no |
 | <a name="input_policy_document"></a> [policy\_document](#input\_policy\_document) | Optional IAM policy JSON to attach to the bucket | `string` | `null` | no |
 | <a name="input_sse_algorithm"></a> [sse\_algorithm](#input\_sse\_algorithm) | Server-side encryption algorithm used to encrypt objects at rest in the S3 bucket. Defaults to AES256 for basic encryption. | `string` | `"aws:kms"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Optional tags to override or extend default\_tags | `map(string)` | `{}` | no |

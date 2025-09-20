@@ -48,6 +48,7 @@ variable "kms_key_id" {
 variable "logging_target_bucket" {
   description = "S3 bucket where access logs will be delivered"
   type        = string
+  default     = ""
 }
 
 variable "enable_encryption" {
