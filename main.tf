@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket        = "${var.bucket_name}-${random_id.suffix.hex}"
+  bucket        = "${lower(var.bucket_name)}-${random_id.suffix.hex}"
   tags          = merge(var.default_tags, var.tags)
   force_destroy = var.force_destroy
 }
@@ -21,7 +21,7 @@ resource "aws_s3_bucket_logging" "this" {
   count         = var.enable_logging && var.logging_target_bucket != "" ? 1 : 0
   bucket        = aws_s3_bucket.this.id
   target_bucket = var.logging_target_bucket
-  target_prefix = "${var.bucket_name}/logs/"
+  target_prefix = "${aws_s3_bucket.this.bucket}/logs/"
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {
@@ -39,7 +39,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm     = var.sse_algorithm
-      kms_master_key_id = var.enable_encryption != false ? var.kms_key_id : null # Only set if encryption is enabled and kms_key_id
+      kms_master_key_id = var.sse_algorithm == "aws:kms" ? var.kms_key_id : null # Only set if encryption is enabled with KMS
     }
   }
 }
